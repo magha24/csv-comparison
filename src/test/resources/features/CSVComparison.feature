@@ -1,26 +1,14 @@
-Feature: Compare CSV files
+Feature: CSV File Comparison
 
+  Scenario Outline: Compare two CSV files and identify differences
+    Given the first CSV file is "<csv1>"
+    And the second CSV file is "<csv2>"
+    When I compare the two CSV files
+    Then I should see the differences as follows:
+      | Event         | Gold          | Silver              | Bronze    |
+      | 200m          | Jamaica       | USA                 | Australia |
+      | 400m          | Great Britain | Trinidad and Tobago | Jamaica   |
 
-  @testCase1
-  Scenario: Identical Files
-    Given I have CSV files "data/test_case_1/file1.csv" and "data/test_case_1/file2.csv"
-    When I compare the CSV files
-    Then the files should be identical
-
-  @testCase2
-  Scenario: Different Content
-    Given I have CSV files "data/test_case_2/file1.csv" and "data/test_case_2/file2.csv"
-    When I compare the CSV files
-    Then the files should have differences
-
-  @testCase3
-  Scenario: Different Number of Rows
-    Given I have CSV files "data/test_case_3/file1.csv" and "data/test_case_3/file2.csv"
-    When I compare the CSV files
-    Then the files should have differences
-
-  @testCase4
-  Scenario: Different Number of Columns
-    Given I have CSV files "data/test_case_4/file1.csv" and "data/test_case_4/file2.csv"
-    When I compare the CSV files
-    Then the files should have differences
+    Examples:
+      | csv1                  | csv2                  |
+      | paris_olympics_1.csv  | paris_olympics_2.csv  |
