@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %c{1} - %msg%n" />
+        </Console>
+
+        <!-- Rolling File Appender for plain text logs -->
+        <RollingFile name="File" fileName="log/app.log" filePattern="log/app-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{ISO8601} [%t] %-5level %c{1} - %msg%n" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="5MB" />
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="10" fileIndex="min" />
+        </RollingFile>
+
+        <!-- HTML File Appender -->
+        <File name="HTML" fileName="log/application.html">
+            <HTMLLayout title="Application Log" locationInfo="true" />
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <!-- Root Logger -->
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="File" />
+            <AppenderRef ref="HTML" />
+        </Root>
+
+        <!-- Specific package logger (optional) -->
+        <Logger name="com.framework" level="debug" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="File" />
+        </Logger>
+    </Loggers>
+</Configuration>
