@@ -1,0 +1,15 @@
+2024-08-02T12:08:43,853 [main] INFO  CSVComparisonSteps - Loading first CSV file: paris_olympics_1.csv
+2024-08-02T12:08:43,862 [main] INFO  CSVComparator - Reading CSV file from path: src/test/resources/csv/paris_olympics_1.csv
+2024-08-02T12:08:43,883 [main] INFO  CSVComparator - Successfully read CSV file: src/test/resources/csv/paris_olympics_1.csv
+2024-08-02T12:08:43,890 [main] INFO  CSVComparisonSteps - Loading second CSV file: paris_olympics_2.csv
+2024-08-02T12:08:43,890 [main] INFO  CSVComparator - Reading CSV file from path: src/test/resources/csv/paris_olympics_2.csv
+2024-08-02T12:08:43,892 [main] INFO  CSVComparator - Successfully read CSV file: src/test/resources/csv/paris_olympics_2.csv
+2024-08-02T12:08:43,896 [main] INFO  CSVComparisonSteps - Initiating CSV file comparison
+2024-08-02T12:08:43,898 [main] INFO  CSVComparator - Comparing CSV files
+2024-08-02T12:08:43,898 [main] DEBUG CSVComparator - Difference found in event: 400m
+2024-08-02T12:08:43,899 [main] DEBUG CSVComparator - Difference found in event: 200m
+2024-08-02T12:08:43,899 [main] DEBUG CSVComparator - Event 800m only present in the second CSV
+2024-08-02T12:08:43,899 [main] INFO  CSVComparator - CSV comparison completed with 3 differences found
+2024-08-02T12:08:43,906 [main] INFO  CSVComparisonSteps - Validating CSV differences
+2024-08-02T12:08:43,907 [main] DEBUG CSVComparisonSteps - Checking differences for event: 200m
+2024-08-02T12:08:44,039 [main] DEBUG CSVComparisonSteps - Checking differences for event: 400m
